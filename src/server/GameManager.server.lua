@@ -13,10 +13,8 @@ local RaceManager = require(Server:WaitForChild("RaceManager"))
 local LeaderboardManager = require(Server:WaitForChild("LeaderboardManager"))
 local AIManager = require(Server:WaitForChild("AIManager"))
 
--- RemoteEvents
-local Remotes = Instance.new("Folder")
-Remotes.Name = "Remotes"
-Remotes.Parent = ReplicatedStorage
+-- RemoteEvents (folder pre-created by default.project.json)
+local Remotes = ReplicatedStorage:WaitForChild("Remotes")
 
 local function makeRemote(name, isFunction)
 	local r = Instance.new(isFunction and "RemoteFunction" or "RemoteEvent")
